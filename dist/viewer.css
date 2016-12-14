@@ -259,7 +259,7 @@
   margin: 0 auto 5px;
   padding: 3px 0;
 }
-.viewer-toolbar > li {
+.viewer-action {
   display: inline-block;
   overflow: hidden;
 
@@ -272,7 +272,7 @@
   background-color: #000;
   background-color: rgba(0, 0, 0, .5);
 }
-.viewer-toolbar > li:hover {
+.viewer-action:hover {
   background-color: #000;
   background-color: rgba(0, 0, 0, .8);
 }

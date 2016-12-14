@@ -8,31 +8,6 @@
   padding: 3px 0;
   font-size: 0;
 
-  > li {
-    display: inline-block;
-    overflow: hidden;
-
-    width: 24px;
-    height: 24px;
-
-    @include bg-color($color-black, .5);
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    &:hover {
-      @include bg-color($color-black, .8);
-    }
-
-    &:before {
-      margin: 2px;
-    }
-
-    + li {
-      margin-left: 1px;
-    }
-  }
-
  /* > .viewer-play {
     width: 30px;
     height: 30px;
@@ -43,4 +18,29 @@
       margin: 5px;
     }
   }*/
+}
+
+.viewer-action {
+  display: inline-block;
+  overflow: hidden;
+
+  width: 24px;
+  height: 24px;
+
+  @include bg-color($color-black, .5);
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  &:hover {
+    @include bg-color($color-black, .8);
+  }
+
+  &:before {
+    margin: 2px;
+  }
+
+  + .viewer-action {
+    margin-left: 1px;
+  }
 }
