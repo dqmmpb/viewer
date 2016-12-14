@@ -276,10 +276,11 @@
   background-color: #000;
   background-color: rgba(0, 0, 0, .8);
 }
-.viewer-toolbar > li:before {
+
+.viewer-action:before {
   margin: 2px;
 }
-.viewer-toolbar > li + li {
+.viewer-action + .viewer-action {
   margin-left: 1px;
 }
 
