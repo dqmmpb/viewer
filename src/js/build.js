@@ -27,6 +27,7 @@
       $title.addClass(!options.title ? CLASS_HIDE : getResponsiveClass(options.title));
 
       $toolbar.addClass(!options.toolbar ? CLASS_HIDE : getResponsiveClass(options.toolbar));
+      $toolbar.find('li[class*=one-to-one]').toggleClass(CLASS_HIDE, !options.onetooneable);
       $toolbar.find('li[class*=zoom]').toggleClass(CLASS_HIDE, !options.zoomable);
       $toolbar.find('li[class*=flip]').toggleClass(CLASS_HIDE, !options.scalable);
       $toolbar.find('li[class*=prev]').toggleClass(CLASS_HIDE, !options.slidable);

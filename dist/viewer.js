@@ -301,6 +301,7 @@
       $title.addClass(!options.title ? CLASS_HIDE : getResponsiveClass(options.title));
 
       $toolbar.addClass(!options.toolbar ? CLASS_HIDE : getResponsiveClass(options.toolbar));
+      $toolbar.find('li[class*=one-to-one]').toggleClass(CLASS_HIDE, !options.onetooneable);
       $toolbar.find('li[class*=zoom]').toggleClass(CLASS_HIDE, !options.zoomable);
       $toolbar.find('li[class*=flip]').toggleClass(CLASS_HIDE, !options.scalable);
       $toolbar.find('li[class*=prev]').toggleClass(CLASS_HIDE, !options.slidable);
@@ -1866,7 +1867,9 @@
     // Enable prev and next the image
     slidable: true,
     // Enable play the image
-    playable: true
+    playable: true,
+    // Enable one to one
+    onetooneable: true
   };
 
   Viewer.setDefaults = function (options) {

@@ -80,7 +80,9 @@
     // Enable prev and next the image
     slidable: true,
     // Enable play the image
-    playable: true
+    playable: true,
+    // Enable one to one
+    onetooneable: true
   };
 
   Viewer.setDefaults = function (options) {
