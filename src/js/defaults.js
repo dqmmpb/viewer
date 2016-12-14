@@ -74,7 +74,13 @@
     hide: null,
     hidden: null,
     view: null,
-    viewed: null
+    viewed: null,
+
+    // 2016-12-14 by dqm
+    // Enable prev and next the image
+    slidable: true,
+    // Enable play the image
+    playable: true
   };
 
   Viewer.setDefaults = function (options) {

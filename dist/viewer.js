@@ -301,11 +301,14 @@
       $title.addClass(!options.title ? CLASS_HIDE : getResponsiveClass(options.title));
 
       $toolbar.addClass(!options.toolbar ? CLASS_HIDE : getResponsiveClass(options.toolbar));
-      $toolbar.find('li[class*=zoom]').toggleClass(CLASS_INVISIBLE, !options.zoomable);
-      $toolbar.find('li[class*=flip]').toggleClass(CLASS_INVISIBLE, !options.scalable);
+      $toolbar.find('li[class*=zoom]').toggleClass(CLASS_HIDE, !options.zoomable);
+      $toolbar.find('li[class*=flip]').toggleClass(CLASS_HIDE, !options.scalable);
+      $toolbar.find('li[class*=prev]').toggleClass(CLASS_HIDE, !options.slidable);
+      $toolbar.find('li[class*=next]').toggleClass(CLASS_HIDE, !options.slidable);
+      $toolbar.find('li[class*=play]').toggleClass(CLASS_HIDE, !options.playable);
 
       if (!options.rotatable) {
-        $toolbar.find('li[class*=rotate]').addClass(CLASS_INVISIBLE).appendTo($toolbar);
+        $toolbar.find('li[class*=rotate]').addClass(CLASS_HIDE).appendTo($toolbar);
       }
 
       $navbar.addClass(!options.navbar ? CLASS_HIDE : getResponsiveClass(options.navbar));
@@ -777,16 +780,19 @@
 
       event.preventDefault();
 
+
+      // 2016-12-14 by dqm. Remove wheeling detective, not zoom out by wheel bug
+
       // Limit wheel speed to prevent zoom too fast
-      if (this.wheeling) {
-        return;
-      }
-
-      this.wheeling = true;
-
-      setTimeout($.proxy(function () {
-        this.wheeling = false;
-      }, this), 50);
+      // if (this.wheeling) {
+      //   return;
+      // }
+      //
+      // this.wheeling = true;
+      //
+      // setTimeout($.proxy(function () {
+      //   this.wheeling = false;
+      // }, this), 50);
 
       if (e.deltaY) {
         delta = e.deltaY > 0 ? 1 : -1;
@@ -1854,7 +1860,13 @@
     hide: null,
     hidden: null,
     view: null,
-    viewed: null
+    viewed: null,
+
+    // 2016-12-14 by dqm
+    // Enable prev and next the image
+    slidable: true,
+    // Enable play the image
+    playable: true
   };
 
   Viewer.setDefaults = function (options) {

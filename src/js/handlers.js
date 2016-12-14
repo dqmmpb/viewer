@@ -183,16 +183,19 @@
 
       event.preventDefault();
 
+
+      // 2016-12-14 by dqm. Remove wheeling detective, not zoom out by wheel bug
+
       // Limit wheel speed to prevent zoom too fast
-      if (this.wheeling) {
-        return;
-      }
-
-      this.wheeling = true;
-
-      setTimeout($.proxy(function () {
-        this.wheeling = false;
-      }, this), 50);
+      // if (this.wheeling) {
+      //   return;
+      // }
+      //
+      // this.wheeling = true;
+      //
+      // setTimeout($.proxy(function () {
+      //   this.wheeling = false;
+      // }, this), 50);
 
       if (e.deltaY) {
         delta = e.deltaY > 0 ? 1 : -1;

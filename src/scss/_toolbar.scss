@@ -4,12 +4,12 @@
 .viewer-toolbar {
   overflow: hidden;
 
-  width: 280px;
   margin: 0 auto 5px;
   padding: 3px 0;
+  font-size: 0;
 
   > li {
-    float: left;
+    display: inline-block;
     overflow: hidden;
 
     width: 24px;
@@ -33,7 +33,7 @@
     }
   }
 
-  > .viewer-play {
+ /* > .viewer-play {
     width: 30px;
     height: 30px;
     margin-top: -3px;
@@ -42,5 +42,5 @@
     &:before {
       margin: 5px;
     }
-  }
+  }*/
 }
