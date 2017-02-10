@@ -5,7 +5,7 @@
  * Copyright (c) 2015-2016 Fengyuan Chen
  * Released under the MIT license
  *
- * Date: 2016-03-11T07:57:59.486Z
+ * Date: 2016-12-15T02:51:54.145Z
  */
 
 (function (factory) {
@@ -118,12 +118,13 @@
     var scaleX = options.scaleX;
     var scaleY = options.scaleY;
 
-    if (isNumber(rotate)) {
-      transforms.push('rotate(' + rotate + 'deg)');
-    }
-
+    // Scale should come first before rotate
     if (isNumber(scaleX) && isNumber(scaleY)) {
       transforms.push('scale(' + scaleX + ',' + scaleY + ')');
+    }
+
+    if (isNumber(rotate)) {
+      transforms.push('rotate(' + rotate + 'deg)');
     }
 
     return transforms.length ? transforms.join(' ') : 'none';
@@ -919,7 +920,6 @@
       }
 
       if (action) {
-        event.preventDefault();
         this.action = action;
 
         // IE8  has `event.pageX/Y`, but not `event.originalEvent.pageX/Y`
@@ -976,8 +976,6 @@
       var action = this.action;
 
       if (action) {
-        event.preventDefault();
-
         if (action === 'move' && this.options.transition) {
           this.$image.addClass(CLASS_TRANSITION);
         }
